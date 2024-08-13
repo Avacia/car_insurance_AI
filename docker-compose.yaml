@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  backend:
+    build: ./backend
+    container_name: Misson4-CarInsurance-Backend
+    ports: 
+      - '4000:4000'
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+  frontend:
+    build: ./frontend
+    container_name: Misson4-CarInsurance-Frontend
+    ports: 
+      - '5173:5173'
+    stdin_open: true
+    tty: true
