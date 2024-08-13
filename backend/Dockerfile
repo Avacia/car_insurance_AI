@@ -1,12 +1,14 @@
 FROM node:22-alpine
 
-RUN mkdir /backend
-
 WORKDIR /backend
 
-COPY . .
+COPY package.json .
 
 RUN npm install
+
+RUN npm i -g serve
+
+COPY . .
 
 EXPOSE 4000
 
