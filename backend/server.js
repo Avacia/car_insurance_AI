@@ -11,11 +11,11 @@ app.use(express.json())
 
 
 /* =================================== Import Routes ==================================== */
-/* const ROUNTERNAME = require('') */
+const apiRouter = require('./Router/apiRoute') 
 
 
 /* ======================================= Routes ======================================= */
-/* app.use(ROUNTERNAME) */
+ app.use(apiRouter)
 
 
 /* ================================= Default Root Routes ================================ */
