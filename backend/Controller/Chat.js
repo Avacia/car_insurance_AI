@@ -2,7 +2,7 @@ const { GoogleGenerativeAI } = require('@google/generative-ai');
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY );
 
-export default async function handler(req, res) {
+module.exports.handler = async(req, res) => {
   
     const { message } = req.body;
 
@@ -18,4 +18,4 @@ export default async function handler(req, res) {
       res.status(500).json({ error: 'An error occurred while processing your request.' });
     }
 
-}
+};
