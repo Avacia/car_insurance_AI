@@ -1,0 +1,42 @@
+.footerContainer{
+    width:100vw;
+    height:50vh;
+    display:flex;
+    flex-direction:column;
+    background-color: #121212;
+    color:white;
+    padding-top:5vh;
+}
+
+.footerUpperPart{
+    display:flex;
+    justify-content: space-around;
+    padding-bottom:5vh;
+}
+
+.footer{
+    display:flex;
+    flex-direction:column;
+    gap:2vh;
+}
+
+.categories{
+    display:flex;
+    flex-direction: column;
+    gap:0.5vh;
+}
+
+
+.footerLowerPart{
+    padding-top:2vh;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.socialMenu{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:3vw;
+}

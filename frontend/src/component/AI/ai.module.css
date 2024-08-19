@@ -1,0 +1,141 @@
+.aiContainer{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:5vw;
+}
+
+.content{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:2vh;
+}
+
+.contentTopic{
+    font-size:5rem;
+    font-weight: bold;
+}
+
+.contentMessage{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:1vh;
+    font-size: 2rem;
+}
+
+.aiBtn{
+    background-color: transparent;
+    border: none;
+    padding:1vh 2vw;
+    border-radius:10px;
+    box-shadow: 1px 1px 1px 1px; 
+}
+
+.aiBtn:hover{
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+}
+
+.animationContactUs{
+    width:30vw;
+    height:30vw;
+}
+
+
+/* ==================================== ChatBot ================================== */
+.chatbotContent{
+    width:15vw;
+    height:50vh;
+    border:2px solid white;
+    border-radius: 10px 10px 0 0;
+    z-index: 1;
+    position:fixed;
+    bottom:0;
+    right:2vw;
+    background-color: white;
+}
+
+.chatbotContentHide{
+    display:none;
+}
+
+.chatbotIcon{
+    width:5vw;
+    height:5vh;
+}
+
+.chatbotIconHide{
+    display:none;
+}
+
+.messageIconBtn{
+    background-color: white;
+    border:none;
+    padding:1vh 1vw;
+    border-radius: 10px;
+    box-shadow:1px 1px 1px 1px;
+    cursor:pointer;
+    position:fixed;
+    bottom:10vh;
+    right:1vw;
+    z-index: 1;
+}
+
+.messageIconBtn:hover{
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out; 
+}
+
+.chatbotContentTopic{
+    width:100%;
+    height:7vh;
+    background-color:#121212;
+    color:white;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:5vw;
+    font-size:0.6rem;
+}
+
+.closeBtn{
+    background-color:transparent;
+    border:none;
+}
+
+.closeBtn:hover{
+    cursor: pointer;
+}
+
+.chatbotContentUserInput{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:1vw;
+    position:fixed;
+    bottom:0;
+    right:2vw;
+    width:15vw;
+    height:6vh;
+    background-color: #121212;
+}
+
+.inputField{
+    width:12vw;
+    height:5vh;
+    border:1px solid white;
+    padding:1vh 1vw;
+    border-radius: 50px;
+    color:white;
+    background-color: #121212;
+}
+
+.sendBtn{
+    background-color: transparent;
+    color:white;
+    border:none;
+}

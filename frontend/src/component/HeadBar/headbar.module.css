@@ -1,0 +1,26 @@
+.headbar{
+    width:100vw;
+    height:10vh;
+    background-color:#242424;
+    color:white;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.topic{
+    position:absolute;
+    left:2vw;
+    font-size:0.9rem;
+}
+
+.menu{
+    border:2px solid white;
+    padding:2vh 3vw;
+    border-radius:10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:3vw;
+}
+
