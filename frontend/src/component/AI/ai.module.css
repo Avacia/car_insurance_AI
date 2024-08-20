@@ -47,14 +47,14 @@
 
 /* ==================================== ChatBot ================================== */
 .chatbotContent{
-    width:20vw;
+    width:25vw;
     height:80vh;
     border:2px solid white;
     border-radius: 10px 10px 0 0;
     z-index: 1;
     position:fixed;
     bottom:0;
-    right:2vw;
+    right:1vw;
     background-color: white;
 }
 
@@ -118,8 +118,8 @@
     gap:1vw;
     position:fixed;
     bottom:0;
-    right:2vw;
-    width:20vw;
+    right:1vw;
+    width:25vw;
     height:6vh;
     background-color: #121212;
 }
@@ -139,3 +139,59 @@
     color:white;
     border:none;
 }
+
+.chatbotContentMessage{
+
+    /* overflow-x: scroll; */
+    max-height: 100vh;
+    display:flex;
+    flex-direction: column;
+    gap:1vh;
+    padding:5vh 1vw 30vh 1vw;
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+
+.assistantLiStyle{
+    color: #fff;
+    background: black;
+    padding: 20px 20px 20px 20px;
+    border-radius: 10px 10px;
+    list-style-type: none;
+    margin:0vh 4vw 5vh 0vw;
+}
+
+.userLiStyle{
+    color: #fff;
+    background: #c4b135;
+    padding: 20px 20px 20px 20px;
+    border-radius: 10px 10px;
+    list-style-type: none;
+    margin:0vh 0vw 5vh 4vw;
+}
+
+
+
+.loaderContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .loader {
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    background-color: #FF5C35;
+    animation: spin 2s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+  }
+  
+  @keyframes spin {
+    0%, 100% {
+      transform: scale(1) rotate(0deg);
+    }
+    50% {
+      transform: scale(0.5) rotate(180deg);
+    }
+  }

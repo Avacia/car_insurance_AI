@@ -3,7 +3,7 @@ import Lottie from 'lottie-react'
 import ContactUs from '../../assets/animation/Animation - contactUs.json'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRobot, faMessage, faXmark, faUpLong } from '@fortawesome/free-solid-svg-icons';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 
 export default function AI(){
@@ -11,6 +11,7 @@ export default function AI(){
     const [userInput, setUserInput] = useState('');
     const [chatPrompts, setChatPrompts] = useState([]);
     const [chatBool, setChatBool] = useState(false);
+    const chatContainerRef = useRef(null);
 
 
     function handleClick(){
@@ -64,6 +65,12 @@ export default function AI(){
             sendConversation(userInput)
             setChatBool(false);
             setUserInput('');
+
+            return () => {
+                if (chatContainerRef.current) {
+                    chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+                }
+            }
         }
         
     }, [chatPrompts])
@@ -123,13 +130,18 @@ export default function AI(){
                         <button className={style.closeBtn} onClick={handleClick}><FontAwesomeIcon icon={faXmark} size="xl" color="white"/></button>
                     </div>
 
-                    <div className={style.chatbotContentMessage}>
+                    <div className={style.chatbotContentMessage} ref={chatContainerRef}>
+                    {
+                        chatPrompts.length === 0 &&    
+                        <div className={style.loaderContainer}>
+                            <div className={style.loader}></div>
+                        </div>
+                    }       
                     <ul className="chat">
                         {chatPrompts.length > 0 && chatPrompts.map((message, index) => {
                             
                             return(
-                                
-                                <li key={index}>
+                                <li key={index} className={`${message.role === `assistant` ? style.assistantLiStyle : style.userLiStyle} `}>
                                     {message.content}
                                 </li>
                             )
