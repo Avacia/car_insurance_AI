@@ -47,8 +47,8 @@
 
 /* ==================================== ChatBot ================================== */
 .chatbotContent{
-    width:15vw;
-    height:50vh;
+    width:20vw;
+    height:80vh;
     border:2px solid white;
     border-radius: 10px 10px 0 0;
     z-index: 1;
@@ -119,13 +119,13 @@
     position:fixed;
     bottom:0;
     right:2vw;
-    width:15vw;
+    width:20vw;
     height:6vh;
     background-color: #121212;
 }
 
 .inputField{
-    width:12vw;
+    width:15vw;
     height:5vh;
     border:1px solid white;
     padding:1vh 1vw;

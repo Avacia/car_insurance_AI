@@ -9,16 +9,37 @@ import { useEffect, useState } from 'react';
 export default function AI(){
     const [isOpen, setIsOpen] = useState(false);
     const [userInput, setUserInput] = useState('');
-    const [chatPrompts, setChatPrompts] = useState([{ role: 'system', content: "You are Tinnie, an AI that helps users choose the best insurance policy." }]);
+    const [chatPrompts, setChatPrompts] = useState([]);
     const [chatBool, setChatBool] = useState(false);
-
-    
 
 
     function handleClick(){
         setIsOpen(!isOpen);
-        if(chatPrompts.length === 1){
-            sendMessageToAI(chatPrompts[0].content)
+        sendMessageToAI();
+    }
+
+    async function sendConversation(userInput){
+    
+        const options = {
+        method: 'POST',
+        body: JSON.stringify({
+            message: userInput
+        }),
+        headers: {
+            'Content-Type': 'application/json',
+            }
+        }
+    
+        try{
+            const response = await fetch('http://localhost:4000/conversation', options)
+            const data = await response.json()
+          //console.log(data)
+            setChatPrompts([...chatPrompts, { role: 'assistant', content: data.message}]);
+            console.log(data.message)
+            
+        }
+        catch(error){
+            console.log(error)
         }
     }
 
@@ -40,28 +61,30 @@ export default function AI(){
     useEffect(() => {
         console.log(chatPrompts)
         if(chatPrompts.length > 0 && chatBool && userInput != ''){
-            sendMessageToAI(userInput)
+            sendConversation(userInput)
             setChatBool(false);
             setUserInput('');
         }
         
     }, [chatPrompts])
 
-
-    async function sendMessageToAI(userInput){
-    
-        const options = {
-        method: 'POST',
-        body: JSON.stringify({
-            message: userInput
-        }),
-        headers: {
-            'Content-Type': 'application/json',
-            }
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter' || event.keyCode === 13) {
+            if(userInput != ''){
+                setChatPrompts([...chatPrompts, { role: 'user', content: userInput}]);
+                setChatBool(true);
+                
+            } 
         }
+
+
+    }    
+
+
+    async function sendMessageToAI(){
     
         try{
-            const response = await fetch('http://localhost:4000/chat', options)
+            const response = await fetch('http://localhost:4000/chat')
             const data = await response.json()
           //console.log(data)
             setChatPrompts([...chatPrompts, { role: 'assistant', content: data.message}]);
@@ -103,7 +126,7 @@ export default function AI(){
                     <div className={style.chatbotContentMessage}>
                     <ul className="chat">
                         {chatPrompts.length > 0 && chatPrompts.map((message, index) => {
-                            console.log(message.content)
+                            
                             return(
                                 
                                 <li key={index}>
@@ -115,8 +138,8 @@ export default function AI(){
                     </div>
 
                     <div className={style.chatbotContentUserInput}>
-                        <input className={style.inputField} type="text" value={userInput} onChange={userInputContent} placeholder="Type your message here..." />
-                        <button className={style.sendBtn} onClick={handleSubmit}>><FontAwesomeIcon icon={faUpLong} size='x' /></button>
+                        <input className={style.inputField} type="text" value={userInput} onChange={userInputContent} onKeyDown={handleKeyDown} placeholder="Type your message here..." />
+                        <button className={style.sendBtn} onClick={handleSubmit} ><FontAwesomeIcon icon={faUpLong} size='x' /></button>
                     </div>
                 </div>}
             </div>
