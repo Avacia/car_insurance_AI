@@ -59,17 +59,23 @@ export default function AI(){
 
     }    
 
+    function scrollChat(){
+
+        if (chatContainerRef.current) {
+            chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+        }
+    }    
+
     useEffect(() => {
         console.log(chatPrompts)
         if(chatPrompts.length > 0 && chatBool && userInput != ''){
             sendConversation(userInput)
             setChatBool(false);
             setUserInput('');
+            scrollChat();
 
             return () => {
-                if (chatContainerRef.current) {
-                    chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
-                }
+                scrollChat();
             }
         }
         
@@ -102,6 +108,7 @@ export default function AI(){
             console.log(error)
         }
     }
+    
 
     return(
         <div className="AI">
