@@ -62,7 +62,8 @@ export default function AI(){
     function scrollChat(){
 
         if (chatContainerRef.current) {
-            chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+            // chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+            chatContainerRef.current.scrollTop = 100;
         }
     }    
 
