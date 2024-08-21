@@ -22,7 +22,6 @@ module.exports.handler = async(req, res) => {
 
 };
 
-
 module.exports.conversation = async(req, res) => {
   
   const { message } = req.body;
