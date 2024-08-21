@@ -1,23 +1,24 @@
 import style from './card.module.css'
 
 
-export default function card(){
+export default function card() {
     const cardInfo = [
         {
             name: "MBI (Mechanical Breakdown Insurance)",
-            description: "Car Insurance",
+            description: "Covers repair costs for mechanical and electrical failures after your manufacturer's warranty expires.",
             price: "10000",
         },
         {
             name: "Comprehensive Car Insurance",
-            description: "Car Insurance",
-            price: "10000",
+            description: "Provides the highest level of protection, covering damage to your car, other vehicles, and property, as well as theft and natural disasters.",
+            price: "7,000",
         },
         {
-            name: " Third Party Car Insurance",
-            description: "Car Insurance",
-            price: "10000",
+            name: "Third Party Car Insurance",
+            description: "Basic coverage that protects you against costs from damage caused to other people's vehicles or property in an accident.",
+            price: "4,000",
         }
+
     ]
 
     return(
