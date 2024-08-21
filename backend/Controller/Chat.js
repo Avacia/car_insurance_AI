@@ -3,25 +3,6 @@ require('dotenv').config()
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY );
 
-module.exports.handler = async(req, res) => {
-  
-    const prompt = `You are Tinnie, an AI that helps users choose the best insurance policy from Mechanical Breakdown Insurance, Comprehensive Car Insurance and Third Party Insurance`;
-
-    try {
-      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-      const result = await model.generateContent(prompt);
-      
-      const response = await result.response;
-      const text = response.text();
-
-      res.status(200).json({ message: text });
-    } catch (error) {
-      console.error('Error:', error);
-      res.status(500).json({ error: 'An error occurred while processing your request.' });
-    }
-
-};
-
 module.exports.conversation = async(req, res) => {
   
   const { message } = req.body;
@@ -29,7 +10,27 @@ module.exports.conversation = async(req, res) => {
 
   try {
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-    const result = await model.generateContent(message);
+
+    const chat = model.startChat({
+
+      history:[
+        {
+          role: "model",
+          parts: [
+            {
+             text: `I’m Tinnie.  I help you to choose an insurance policy.  
+                    May I ask you a few personal questions to make sure I 
+                    recommend the best policy for you?`
+            }
+          ],
+          generationConfig:{
+            maxOutputTokens: 500,
+          }
+        },
+      ]
+    })
+
+    const result = await chat.sendMessage(message);
     
     const response = await result.response;
     const text = response.text();
