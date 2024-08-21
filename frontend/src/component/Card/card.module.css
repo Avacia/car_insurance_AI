@@ -29,3 +29,28 @@
 .card h1{
     font-size: 1.5rem;
 }
+
+.describe{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3vh;
+}
+
+.description{
+    padding: 0 2vw;
+}
+
+.display{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+}
+
+.cardImage{
+    width:15vw;
+    height:20vh;
+    border-radius: 10px;
+}
