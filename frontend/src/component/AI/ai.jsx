@@ -16,7 +16,7 @@ export default function AI(){
 
     function handleClick(){
         setIsOpen(!isOpen);
-        sendMessageToAI();
+        sendConversation(userInput);
     }
 
     async function sendConversation(userInput){
@@ -93,22 +93,6 @@ export default function AI(){
 
 
     }    
-
-
-    async function sendMessageToAI(){
-    
-        try{
-            const response = await fetch('http://localhost:4000/chat')
-            const data = await response.json()
-          //console.log(data)
-            setChatPrompts([...chatPrompts, { role: 'assistant', content: data.message}]);
-            console.log(data.message)
-            
-        }
-        catch(error){
-            console.log(error)
-        }
-    }
     
 
     return(

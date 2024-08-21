@@ -15,6 +15,14 @@ module.exports.conversation = async(req, res) => {
 
       history:[
         {
+          role: "user",
+          parts: [
+            {
+              text: "Hello"
+            }
+          ]
+        },
+        {
           role: "model",
           parts: [
             {
@@ -23,10 +31,7 @@ module.exports.conversation = async(req, res) => {
                     recommend the best policy for you?`
             }
           ],
-          generationConfig:{
-            maxOutputTokens: 500,
-          }
-        },
+        }
       ]
     })
 
