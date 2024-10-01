@@ -118,10 +118,10 @@ This structure keeps the code modular and organized, making it easy to extend an
 Here are some images showcasing the user interface:
 
 - **Home Page**
-  ![Home Page](readMeImage/frontendImage.mp4)
+  [![Home Page](https://youtu.be/qBWqo5ejpss)](https://youtu.be/qBWqo5ejpss)
 
 - **Insurance Help Page**
-  ![Insurance Help](readMeImage/AIResponse.mp4)
+  [![Home Page](https://youtu.be/9qdOD0zVJ5c)](https://youtu.be/9qdOD0zVJ5c)
 
 ---
 
