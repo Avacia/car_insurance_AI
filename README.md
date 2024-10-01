@@ -1,7 +1,4 @@
-const fs = require('fs');
 
-// Define the content for the README.md file
-const readmeContent = `
 # Car Insurance AI
 
 This project is an AI-powered system to assist users in understanding and selecting the appropriate type of car insurance. The system features an AI assistant that guides users through different insurance options without requiring a login or handling insurance claims.
@@ -39,47 +36,47 @@ This project is an AI-powered system to assist users in understanding and select
 To run this project locally, follow these steps:
 
 1. **Clone the repository:**
-   \`\`\`bash
+   ```bash
    git clone https://github.com/Avacia/car_insurance_AI.git
    cd car_insurance_AI
-   \`\`\`
+   ```
 
 2. **Install dependencies:**
 
    For **Backend**:
-   \`\`\`bash
+   ```bash
    cd backend
    npm install
-   \`\`\`
+   ```
 
    For **Frontend**:
-   \`\`\`bash
+   ```bash
    cd ../frontend
    npm install
-   \`\`\`
+   ```
 
 3. **Set up environment variables**:  
    Create a .env file in the backend folder with the following:
-   \`\`\`bash
+   ```bash
    MONGO_URI=your_mongodb_connection_string
    PORT=the_port_you_wish_your_backend_to_be_run_at
-   \`\`\`
+   ```
 
 4. **Start the development server:**
 
    **Backend**:
-   \`\`\`bash
+   ```bash
    npm run dev
-   \`\`\`
+   ```
 
    **Frontend**:
-   \`\`\`bash
+   ```bash
    cd ../frontend
    npm start
-   \`\`\`
+   ```
 
 5. **Open the application:**  
-   Go to \`http://localhost:3000\` to access the frontend.
+   Go to `http://localhost:3000` to access the frontend.
 
 ---
 
@@ -87,7 +84,7 @@ To run this project locally, follow these steps:
 
 The backend structure follows a typical MVC (Model-View-Controller) pattern for easy scalability and maintenance. Here is a brief overview of the structure:
 
-\`\`\`
+```
 backend/
 │
 ├── controllers/
@@ -97,7 +94,7 @@ backend/
 │   └── insuranceRoutes.js  # Routes for interacting with AI assistance and insurance options
 |
 └── server.js  # Server setup and initialization
-\`\`\`
+```
 
 This structure keeps the code modular and organized, making it easy to extend and manage as the project grows.
 
@@ -145,9 +142,9 @@ To use the system, follow these steps:
 Contributions are welcome! Please follow these steps to contribute:
 
 1. Fork the repository.
-2. Create a new branch (\`git checkout -b feature/new-feature\`).
-3. Make your changes and commit them (\`git commit -m 'Add new feature'\`).
-4. Push to the branch (\`git push origin feature/new-feature\`).
+2. Create a new branch (`git checkout -b feature/new-feature`).
+3. Make your changes and commit them (`git commit -m 'Add new feature'`).
+4. Push to the branch (`git push origin feature/new-feature`).
 5. Open a pull request.
 
 ---
@@ -163,10 +160,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 If you have any questions or suggestions, feel free to reach out at:
 - **GitHub**: [Avacia](https://github.com/Avacia)
 - **Email**: wang80139@gmail.com
-`;
-
-// Write the content to README.md
-fs.writeFile('README.md', readmeContent, (err) => {
-  if (err) throw err;
-  console.log('README.md has been created successfully.');
-});
