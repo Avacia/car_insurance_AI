@@ -1,6 +1,3 @@
-# Let's create the README.md file with the content provided.
-
-readme_content = """
 # Car Insurance AI
 
 This project is an AI-powered system to assist with car insurance processes, such as predicting insurance costs, handling customer queries, and managing claims. The system integrates machine learning models with a user-friendly frontend for seamless interaction between users and insurance services.
