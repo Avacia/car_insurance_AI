@@ -121,7 +121,7 @@ Here are some images showcasing the user interface:
   [![Home Page](https://youtu.be/qBWqo5ejpss)](https://youtu.be/qBWqo5ejpss)
 
 - **Insurance Help Page**
-  [![Home Page](https://youtu.be/9qdOD0zVJ5c)](https://youtu.be/9qdOD0zVJ5c)
+  [![Insurance Assistance](https://youtu.be/9qdOD0zVJ5c)](https://youtu.be/9qdOD0zVJ5c)
 
 ---
 
